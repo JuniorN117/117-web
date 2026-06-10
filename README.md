@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 117 — Del Pensamiento a la Realidad
 
-## Getting Started
+**117** es un ecosistema interactivo digital donde convergen la ingeniería, el arte, la tecnología y el propósito. Diseñado y desarrollado como la plataforma central del estudio de **Junior Nieves**, este sitio web combina interfaces inmersivas en 3D, simulaciones de telemetría futurista y navegación fluida para transformar ideas en experiencias de software y diseño reales.
 
-First, run the development server:
+---
+
+## 🌌 Características Clave
+
+* **Manifiesto Generativo 3D**: Un fondo interactivo compuesto por un campo de partículas tridimensionales cilíndricas que reacciona de forma dinámica a la atracción del cursor del ratón y aumenta de velocidad (efecto warp-speed) al hacer scroll.
+* **Universo 117 (Consola de Telemetría)**: Un panel táctico y terminal interactiva de telemetría en tiempo real que detalla el estado, coordenadas vectoriales y métricas de rendimiento de los diferentes núcleos del ecosistema:
+  * **ATLAS.CORE** // Ecosistema inteligente y agéntico para desarrollo autónomo de software.
+  * **MUSIC.WAVE** // Paisajes sonoros procedurales sintonizados a 432Hz para inducir estados de hiperenfoque.
+  * **BOOKS.TEXT** // Registro y base de conocimientos de escritos filosóficos y literatura futurista.
+  * **STUDIO.AV** // Producción audiovisual y renderizado cinematográfico en tiempo real.
+  * **LABS.R&D** // Laboratorio experimental para interfaces neuronales y hardware biomecatrónico.
+* **Experiencia Inmersiva de Navegación**: Integración de scroll suave mediante **Lenis** y micro-animaciones HUD fluidas con **Framer Motion**.
+
+---
+
+## 🛠️ Stack Tecnológico
+
+* **Framework**: [Next.js 16](https://nextjs.org/) (App Router) con TypeScript
+* **Diseño y Estilos**: Tailwind CSS v4 (mediante PostCSS) y CSS Modules
+* **Gráficos 3D**:
+  * [Three.js](https://threejs.org/) (Motor 3D base)
+  * [React Three Fiber](https://r3f.docs.pmnd.rs/) (Integración React 3D)
+  * [@react-three/drei](https://github.com/pmndrs/drei) (Componentes y utilidades R3F)
+* **Animación & Física de Scroll**:
+  * [Framer Motion](https://www.framer.com/motion/) (Efectos e interacciones de interfaz)
+  * [Lenis](https://lenis.darkroom.engineering/) (Suavizado de scroll vertical)
+
+---
+
+## 📁 Estructura del Proyecto
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── public/                  # Modelos 3D (.glb), assets de planetas e imágenes
+├── src/
+│   ├── app/                 # Configuración de rutas de Next.js, layout y estilos globales
+│   │   ├── globals.css      # Sistema de diseño de variables CSS
+│   │   ├── layout.tsx       # Estructura del encabezado y la página
+│   │   └── page.tsx         # Punto de entrada de la Landing Page
+│   └── components/          # Componentes interactivos modulares
+│       ├── Hero.tsx         # Cabecera principal y fondo 3D Spline
+│       ├── Manifesto.tsx    # Manifiesto interactivo con Canvas 3D de partículas
+│       ├── Founder.tsx      # Presentación del fundador con efecto de radar
+│       ├── Universe.tsx     # Consola de telemetría y logs interactiva
+│       ├── Projects.tsx     # Galería de proyectos y desarrollos
+│       ├── Philosophy.tsx   # Filosofía y principios de diseño
+│       ├── Vision.tsx       # Visión a futuro del ecosistema
+│       ├── Contact.tsx      # Formulario y canales de contacto
+│       └── SmoothScroll.tsx # Inicializador del scroll suave de Lenis
+└── package.json             # Dependencias y scripts del proyecto
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Instalación y Desarrollo Local
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
-## Learn More
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/TU-USUARIO/117-web.git
+cd 117-web
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Instalar dependencias
+```bash
+npm install
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 3. Ejecutar el servidor de desarrollo
+```bash
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El sitio estará disponible en: **[http://localhost:3000](http://localhost:3000)**
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👤 Creador
+* **Junior Nieves** - *Fundador de 117* - [Junior Nieves](https://github.com/TU-USUARIO)
