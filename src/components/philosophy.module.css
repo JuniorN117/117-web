@@ -1,0 +1,148 @@
+.philosophySection {
+  height: 300vh;
+  position: relative;
+  background: transparent;
+}
+
+.stickyContainer {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 3rem;
+  overflow: hidden;
+}
+
+.label {
+  position: absolute;
+  top: 4rem;
+  left: 3rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.sublabel {
+  position: absolute;
+  top: 5.5rem;
+  left: 3rem;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* Quote area */
+.quoteArea {
+  flex: 1.5;
+  position: relative;
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.quoteMark {
+  position: absolute;
+  top: -3rem;
+  left: -1rem;
+  font-family: var(--font-display);
+  font-size: 8rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.quoteWrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.quoteText {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Right list */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  width: 320px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  padding-left: 2rem;
+  flex-shrink: 0;
+}
+
+.listItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.listId {
+  color: var(--accent-color);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.listText {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.viewMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--accent-color);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.viewMore:hover {
+  opacity: 0.7;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.viewMore:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .list {
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 2rem;
+  }
+}

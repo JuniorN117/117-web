@@ -1,0 +1,106 @@
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: transparent;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 3rem;
+}
+
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.45) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 3rem;
+  border-radius: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.cta:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2rem 0;
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.copyright {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.socials {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.socialLink {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.socialLink:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .socials {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,180 @@
+.transition {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Canvas ── */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Top/Bottom gradients for seamless blending ── */
+.gradientTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Center connector content ── */
+.centerContent {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ── Vertical connector line ── */
+.verticalLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(226, 226, 226, 0.25) 30%,
+    rgba(214, 159, 76, 0.3) 50%,
+    rgba(226, 226, 226, 0.25) 70%,
+    transparent 100%
+  );
+  transform-origin: top center;
+}
+
+/* ── Diamond waypoint ── */
+.diamond {
+  width: 8px;
+  height: 8px;
+  background: rgba(214, 159, 76, 0.6);
+  transform: rotate(45deg);
+  box-shadow:
+    0 0 12px rgba(214, 159, 76, 0.4),
+    0 0 30px rgba(214, 159, 76, 0.15);
+  animation: diamondPulse 3s ease-in-out infinite;
+}
+
+@keyframes diamondPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(214, 159, 76, 0.4),
+      0 0 30px rgba(214, 159, 76, 0.15);
+    opacity: 0.7;
+  }
+  50% {
+    box-shadow:
+      0 0 18px rgba(214, 159, 76, 0.6),
+      0 0 45px rgba(214, 159, 76, 0.25);
+    opacity: 1;
+  }
+}
+
+/* ── Label ── */
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.labelText {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 400;
+}
+
+.labelSub {
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.2);
+  font-weight: 300;
+}
+
+/* ── Decorative horizontal lines ── */
+.horizLine1,
+.horizLine2 {
+  position: absolute;
+  height: 1px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.horizLine1 {
+  top: 50%;
+  left: 5%;
+  width: 25%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(226, 226, 226, 0.06) 40%,
+    rgba(226, 226, 226, 0.1) 100%
+  );
+}
+
+.horizLine2 {
+  top: 50%;
+  right: 5%;
+  width: 25%;
+  background: linear-gradient(
+    -90deg,
+    transparent 0%,
+    rgba(226, 226, 226, 0.06) 40%,
+    rgba(226, 226, 226, 0.1) 100%
+  );
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .transition {
+    height: 50vh;
+  }
+
+  .verticalLine {
+    height: 40px;
+  }
+
+  .horizLine1,
+  .horizLine2 {
+    width: 15%;
+  }
+}

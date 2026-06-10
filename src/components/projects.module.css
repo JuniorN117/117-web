@@ -1,0 +1,134 @@
+.projectsSection {
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Background image */
+.cardBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 5, 0.3) 0%,
+    rgba(5, 5, 5, 0.7) 50%,
+    rgba(5, 5, 5, 0.92) 100%
+  );
+  z-index: 1;
+}
+
+/* Content */
+.cardContent {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  font-weight: 300;
+  flex-grow: 1;
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.statusText {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Hover glow border */
+.hoverGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.card:hover .hoverGlow {
+  border-color: var(--glow-color);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
